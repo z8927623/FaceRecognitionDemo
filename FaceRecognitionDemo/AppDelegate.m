@@ -10,6 +10,8 @@
 
 @interface AppDelegate ()
 
+//@property (nonatomic, copy) void ()
+
 @end
 
 @implementation AppDelegate
@@ -17,7 +19,24 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+
+    // 测试断言
+//    [self printName:nil];
+    
+    // 测试block
+//    void (^MyBlock)(int) = ^(int num){
+//        NSLog(@"num is: %d", num);
+//    };
+//    
+//    MyBlock(1);
+    
     return YES;
+}
+
+- (void)printName:(NSString *)name
+{
+    NSAssert(name != nil, @"name不能为空");
+    NSLog(@"name is: %@", name);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
